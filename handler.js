@@ -605,7 +605,7 @@ export async function handler(chatUpdate) {
 }
 
 /**
- * Handle groups participants update
+ * Handle groups participants update 
  * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['group-participants.update']} groupsUpdate 
  */
 export async function participantsUpdate({ id, participants, action }) {
@@ -629,10 +629,10 @@ export async function participantsUpdate({ id, participants, action }) {
                         pp = await this.profilePictureUrl(user, 'image')
                     } catch (e) {
                     } finally {
-                        text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
-                            (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
+                        text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Yahh,SiBEBAN Tambah 1 Deh Selamat Join Wahai Beban @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
+                            (chat.sBye || this.bye || conn.bye || 'Yuhu,Beban Berkurang 1 Kalo Balik Lagi Nitip Seblak Ya @user!')).replace('@user', '@' + user.split('@')[0])
                             let apii = await this.getFile(pp)
-                            this.sendButton(id, text, groupMetadata.subject, apii.data, [[(action == 'add' ? 'WELCOME 🔥' : 'BYE 🔥'), 'ura']], '',  { mentions: [user], asLocation: true })
+                            this.sendButton(id, text, groupMetadata.subject, apii.data, [[(action == 'add' ? 'SiBeban🔥' : 'Nitip Mie Goreng🔥'), 'Ngontol']], '',  { mentions: [user], asLocation: true })
                         }
                 }
             }
@@ -677,7 +677,7 @@ export async function deleteUpdate(message) {
             return
         let msg = this.serializeM(this.loadMessage(id))
         if (!msg)
-            return
+            return 
         let chat = global.db.data.chats[msg.chat] || {}
         if (chat.delete)
             return
